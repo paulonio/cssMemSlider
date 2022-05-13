@@ -12,7 +12,6 @@
 
 .slides {
     display: flex;
-    /* justify-content: center; */
     width: 400%;
     height: 506px;
 
@@ -32,16 +31,33 @@
     width: 100%;
     border-radius: 1em;
     margin-right: 10px;
+    margin-bottom: 0.8em;
     /* visibility: hidden; */
 }
 
 .under {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
+}
+
+.text__block {
+    width: 50%;
+    display: flex;
+}
+
+.text {
+    width: 12.5%;
+    /* margin-right: 10px; */
+    transition: .6s ease;
 }
 
 input:first-child {
     margin-left: -52px;
+}
+
+.buttons {
+    padding-left: 1em;
+    background-color: white;
 }
 
 #button1:checked ~ .main {
@@ -59,3 +75,19 @@ input:first-child {
 #button4:checked ~ .main {
     margin-left: -75%;
 }
+
+/* #text-button1:checked ~ .main-text {
+    margin-left: 0;
+}
+
+#text-button2:checked ~ .main-text {
+    margin-left: -12.5%;
+}
+
+#text-button3:checked ~ .main-text {
+    margin-left: -25%;
+}
+
+#text-button4:checked ~ .main-text {
+    margin-left: -37.5%;
+} */
