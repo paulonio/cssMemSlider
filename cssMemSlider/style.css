@@ -4,17 +4,20 @@
     box-sizing: border-box;
 }
 
+body {
+    font-size: 62.5%;
+}
+
 .container {
-    max-width: 910px;
+    max-width: 91em;
     overflow: hidden;
-    margin: 10em auto;
+    margin: auto;
+    margin-top: 6em;
 }
 
 .slides {
-    /* display: flex;
-    flex-wrap: wrap; */
     width: 400%;
-    height: 670px;
+    height: 67em;
 
     margin-bottom: 1em;
     
@@ -22,7 +25,7 @@
 
 .slide {
     display: inline-block;
-    margin-left: -0.32em;
+    margin-left: -0.28em;
     width: 25%;
     transition: .6s ease;
 }
@@ -54,7 +57,8 @@
 
 .text {
     width: 50%;
-    font-size: 15px;
+    padding-left: 0.1em;
+    font-size: 1.5em;
     line-height: 1;
     overflow: hidden;
     /* margin-right: 10px; */
@@ -62,42 +66,49 @@
 }
 
 input:first-child {
-    margin-left: -65px;
+    margin-left: -4.6em;
 }
 
 .buttons {
-    margin-top: -1em;
+    margin-top: -2.5em;
     margin-left: 22.5%;
     display: flex;
-    width: 5.3em;
+    width: 8em;
     background-color: #ffffff;
 }
 
-.button__outer {
-    height: 20px;
-    width: 20px;
+.button__inner {
+    height: 1.5em;
+    width: 1.5em;
     line-height: 1;
+    background-color: #237674;
+    display: inline-block;
+    border-radius: 50%;
+    border: 0.3em solid #237674;
+    transition: .3s ease;
 }
 
-.button__outer:hover button {
+.button__inner:hover {
     background-color: #979696;
-    border: 3px solid #979696;
+    border: 0.3em solid #979696;
+    cursor: pointer;
+}
+
+.button:hover > .button__inner {
+    background-color: #979696;
+    border: 0.3em solid #979696;
     cursor: pointer;
 }
 
 .button {
-    height: 15px;
-    width: 15px;
-    background-color: #237674;
-    display: inline-block;
-    border-radius: 50%;
-    border: 3px solid #237674;
-    transition: .3s ease;
+    height: 3em;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button:hover {
-    background-color: #979696;
-    border: 3px solid #979696;
     cursor: pointer; 
 }
 
@@ -117,50 +128,19 @@ input:first-child {
     margin-left: -75%;
 }
 
-#button1:checked ~ .buttons > span > .button1 {
+#button1:checked ~ .buttons > .button1 > span {
     background-color: black;
 }
 
-#button2:checked ~ .buttons > span > .button2 {
+#button2:checked ~ .buttons > .button2 > span {
     background-color: black;
 }
 
-#button3:checked ~ .buttons > span > .button3 {
+#button3:checked ~ .buttons > .button3 > span {
     background-color: black;
 }
 
-#button4:checked ~ .buttons > span > .button4 {
+#button4:checked ~ .buttons > .button4 > span {
     background-color: black;
 }
 
-/* #button1:checked ~ .buttons {
-    margin-left: 0;
-}
-
-#button2:checked ~ .buttons {
-    margin-left: 25%;
-}
-
-#button3:checked ~ .buttons {
-    margin-left: 50%;
-}
-
-#button4:checked ~ .buttons {
-    margin-left: 75%;
-} */
-
-/* #text-button1:checked ~ .main-text {
-    margin-left: 0;
-}
-
-#text-button2:checked ~ .main-text {
-    margin-left: -12.5%;
-}
-
-#text-button3:checked ~ .main-text {
-    margin-left: -25%;
-}
-
-#text-button4:checked ~ .main-text {
-    margin-left: -37.5%;
-} */
