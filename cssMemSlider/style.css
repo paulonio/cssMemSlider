@@ -11,17 +11,24 @@
 }
 
 .slides {
-    display: flex;
+    /* display: flex;
+    flex-wrap: wrap; */
     width: 400%;
-    height: 506px;
+    height: 670px;
 
     margin-bottom: 1em;
     
 } 
 
 .slide {
+    display: inline-block;
+    margin-left: -0.32em;
     width: 25%;
     transition: .6s ease;
+}
+
+.slide:first-child {
+    margin-left: 0;
 }
 
 .image {
@@ -30,7 +37,7 @@
     height: 100%;
     width: 100%;
     border-radius: 1em;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     margin-bottom: 0.8em;
     /* visibility: hidden; */
 }
@@ -46,22 +53,56 @@
 }
 
 .text {
-    width: 12.5%;
+    width: 50%;
+    font-size: 15px;
+    line-height: 1;
+    overflow: hidden;
     /* margin-right: 10px; */
     transition: .6s ease;
 }
 
 input:first-child {
-    margin-left: -52px;
+    margin-left: -65px;
 }
 
 .buttons {
-    padding-left: 1em;
-    background-color: white;
+    margin-top: -1em;
+    margin-left: 22.5%;
+    display: flex;
+    width: 5.3em;
+    background-color: #ffffff;
+}
+
+.button__outer {
+    height: 20px;
+    width: 20px;
+    line-height: 1;
+}
+
+.button__outer:hover button {
+    background-color: #979696;
+    border: 3px solid #979696;
+    cursor: pointer;
+}
+
+.button {
+    height: 15px;
+    width: 15px;
+    background-color: #237674;
+    display: inline-block;
+    border-radius: 50%;
+    border: 3px solid #237674;
+    transition: .3s ease;
+}
+
+.button:hover {
+    background-color: #979696;
+    border: 3px solid #979696;
+    cursor: pointer; 
 }
 
 #button1:checked ~ .main {
-    margin-left: 0;
+    margin-left: 0%;
 }
 
 #button2:checked ~ .main {
@@ -75,6 +116,38 @@ input:first-child {
 #button4:checked ~ .main {
     margin-left: -75%;
 }
+
+#button1:checked ~ .buttons > span > .button1 {
+    background-color: black;
+}
+
+#button2:checked ~ .buttons > span > .button2 {
+    background-color: black;
+}
+
+#button3:checked ~ .buttons > span > .button3 {
+    background-color: black;
+}
+
+#button4:checked ~ .buttons > span > .button4 {
+    background-color: black;
+}
+
+/* #button1:checked ~ .buttons {
+    margin-left: 0;
+}
+
+#button2:checked ~ .buttons {
+    margin-left: 25%;
+}
+
+#button3:checked ~ .buttons {
+    margin-left: 50%;
+}
+
+#button4:checked ~ .buttons {
+    margin-left: 75%;
+} */
 
 /* #text-button1:checked ~ .main-text {
     margin-left: 0;
