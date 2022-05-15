@@ -5,14 +5,22 @@
 }
 
 body {
+    font-family: 'Lato', sans-serif;
     font-size: 62.5%;
 }
 
 .container {
     max-width: 91em;
+    height: calc( 100vh - 6em );
     overflow: hidden;
     margin: auto;
     margin-top: 6em;
+}
+
+.title {
+    font-size: 3.2em; 
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 .slides {
@@ -20,34 +28,27 @@ body {
     height: 67em;
 
     margin-bottom: 1em;
-    
+    margin-left: 0.2em;
 } 
 
 .slide {
     display: inline-block;
-    margin-left: -0.28em;
+    margin-left: -0.31em;
     width: 25%;
-    transition: .6s ease;
-}
-
-.slide:first-child {
-    margin-left: 0;
 }
 
 .image {
-    /* height: 506px;
-    width: 25%; */
     height: 100%;
     width: 100%;
     border-radius: 1em;
-    /* margin-right: 10px; */
-    margin-bottom: 0.8em;
-    /* visibility: hidden; */
+    margin-bottom: 1em;
+    transition: .6s ease;
 }
 
 .under {
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .text__block {
@@ -56,13 +57,15 @@ body {
 }
 
 .text {
-    width: 50%;
     padding-left: 0.1em;
     font-size: 1.5em;
     line-height: 1;
-    overflow: hidden;
-    /* margin-right: 10px; */
     transition: .6s ease;
+}
+
+input {
+    margin: 0;
+    visibility: hidden;
 }
 
 input:first-child {
@@ -70,12 +73,12 @@ input:first-child {
 }
 
 .buttons {
-    margin-top: -2.5em;
-    margin-left: 22.5%;
+    z-index: 1;
     display: flex;
     width: 8em;
     background-color: #ffffff;
 }
+
 
 .button__inner {
     height: 1.5em;
@@ -112,35 +115,74 @@ input:first-child {
     cursor: pointer; 
 }
 
-#button1:checked ~ .main {
+/* Image Move */
+#button1:checked ~ .slide > .image {
     margin-left: 0%;
 }
 
-#button2:checked ~ .main {
-    margin-left: -25%;
+#button2:checked ~ .slide > .image {
+    margin-left: -100%;
 }
 
-#button3:checked ~ .main {
-    margin-left: -50%;
+#button3:checked ~ .slide > .image {
+    margin-left: -200%;
 }
 
-#button4:checked ~ .main {
-    margin-left: -75%;
+#button4:checked ~ .slide > .image {
+    margin-left: -300%;
 }
 
-#button1:checked ~ .buttons > .button1 > span {
+/* Text Move */
+#button1:checked ~ .slide > .under > .text {
+    margin-left: 0%;
+}
+
+#button2:checked ~ .slide > .under > .text {
+    margin-left: -100%;
+}
+
+#button3:checked ~ .slide > .under > .text {
+    margin-left: -200%;
+}
+
+#button4:checked ~ .slide > .under > .text {
+    margin-left: -300%;
+}
+
+/* Button Active */
+#button1:checked ~ .slide > .under > .buttons > .button1 > span {
     background-color: black;
 }
 
-#button2:checked ~ .buttons > .button2 > span {
+#button2:checked ~ .slide > .under > .buttons > .button2 > span {
     background-color: black;
 }
 
-#button3:checked ~ .buttons > .button3 > span {
+#button3:checked ~ .slide > .under > .buttons > .button3 > span {
     background-color: black;
 }
 
-#button4:checked ~ .buttons > .button4 > span {
+#button4:checked ~ .slide > .under > .buttons > .button4 > span {
     background-color: black;
 }
 
+/* Media Query */
+@media (max-width: 500px) {
+    .title {
+        font-size: 2.4em;
+    }
+    
+    .under {
+        flex-direction: column;
+    }
+
+    .buttons {
+        order: -1;
+        margin-bottom: 1em;
+    }
+
+    .text {
+        padding: 0;
+        align-self: flex-start;
+    }
+}
